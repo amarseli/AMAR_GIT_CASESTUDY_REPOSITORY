@@ -6,7 +6,7 @@ import json
 base_url = "https://developers.zomato.com/api/v2.1/"
 
 ## https://developers.zomato.com/api?lang=tr
-## 03ab83591e28a9936dd78bbdfe420cb9
+## Kee your Zomato Key
         
 def initialize_app(config):
     return Zomato(config)
