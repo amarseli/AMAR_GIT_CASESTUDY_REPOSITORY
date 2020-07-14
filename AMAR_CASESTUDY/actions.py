@@ -20,7 +20,7 @@ class ActionValidateLocation(Action):
 		return 'action_validate_location'
 
 	def run(self, dispatcher, tracker, domain):
-	    config={ "user_key":"03ab83591e28a9936dd78bbdfe420cb9"}
+	    config={ "user_key":"Kee your Zomato Key"}
 	    zomato = zomatopy.initialize_app(config)
 	    
 	    loc = tracker.get_slot('location')
@@ -69,7 +69,7 @@ class ActionSearchRestaurants(Action):
         return location_suggest, lat, lon, city_id
     
     def get_restaurants(self, lat, lon, budgetmin, budgetmax , cuisine, cityId):
-        config={ "user_key":"03ab83591e28a9936dd78bbdfe420cb9"}
+        config={ "user_key":"Kee your Zomato Key"}
         zomato = zomatopy.initialize_app(config)
         
         # To get the restaurants from Zomato we need the cusine id.
@@ -93,7 +93,7 @@ class ActionSearchRestaurants(Action):
     def run(self, dispatcher, tracker, domain):
         # Initialize Zomato
         try:
-            config={ "user_key":"03ab83591e28a9936dd78bbdfe420cb9"}
+            config={ "user_key":"Kee your Zomato Key"}
             zomato = zomatopy.initialize_app(config)
 
             # Get location from slot
@@ -332,7 +332,7 @@ def retrieve_restaurant(lat, lon, cuisines_dict, cuisine, res_key, d_rest):
     #print('retrieve_d_rest eee : ', d_rest)
     base_url = "https://developers.zomato.com/api/v2.1/"
     headers = {'Accept': 'application/json',
-                'user-key': '03ab83591e28a9936dd78bbdfe420cb9'}
+                'user-key': 'Kee your Zomato Key'}
     try:
         results = (requests.get(base_url + "search?" + "&lat=" + str(lat) + "&lon=" + str(lon) + "&cuisines=" + str(
             cuisines_dict.get(cuisine)) + "&start=" + str(res_key)+"&count=20", headers=headers).content).decode("utf-8")
